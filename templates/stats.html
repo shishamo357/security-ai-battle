@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>統計</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>AIバトル統計</h1>
+
+    {% if stats %}
+    <p>試合数: {{ stats.total_games }}</p>
+    <p>攻撃AI勝利: {{ stats.attack_wins }}</p>
+    <p>防御AI勝利: {{ stats.defense_wins }}</p>
+    <p>平均スコア: {{ stats.avg_score }}</p>
+    {% else %}
+    <p>まだバトルの記録がありません。</p>
+    {% endif %}
+
+    <a href="/" class="start-button">🏠 トップへ戻る</a>
+</body>
+</html>

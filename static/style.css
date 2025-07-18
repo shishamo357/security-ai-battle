@@ -1,0 +1,55 @@
+body {
+    font-family: sans-serif;
+    background-color: #f4f4f4;
+    padding: 30px;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+.start-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    display: inline-block;
+    background-color: #444;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.start-button:hover {
+    background-color: #666;
+}
+
+.log-entry {
+    margin: 10px auto;
+    padding: 8px;
+    border-radius: 6px;
+    width: 80%;
+    text-align: left;
+    background-color: white;
+    box-shadow: 0 0 5px rgba(0,0,0,0.1);
+}
+
+.log-entry.attack {
+    border-left: 6px solid red;
+}
+
+.log-entry.defense {
+    border-left: 6px solid blue;
+}
+
+.log-entry.draw {
+    border-left: 6px solid gray;
+}
+
+.final {
+    font-size: 24px;
+    font-weight: bold;
+    color: #222;
+}

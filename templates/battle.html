@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>バトル中</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>セキュリティAIバトル</h1>
+
+    {% for turn in log %}
+    <div class="log-entry {{ turn.result_type }}">
+        <strong>ターン {{ turn.turn }}</strong>：
+        {{ turn.result_icon }} <span>{{ turn.result }}</span>
+        （攻撃: {{ turn.attack }} ／ 防御: {{ turn.defense }} ／ スコア: {{ turn.score }}）
+    </div>
+    {% endfor %}
+
+    <form action="{{ url_for('battle') }}" method="get">
+        <button type="submit" class="next-button">▶ 次のターン</button>
+    </form>
+</body>
+</html>
+
+
+
+

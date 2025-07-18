@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>結果</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>バトル終了</h1>
+    <p class="final">{{ result }}</p>
+
+    <!-- 🆕 再戦ボタン -->
+    <a href="{{ url_for('start') }}" class="start-button">🔁 もう一度バトル！</a>
+    
+    <a href="/" class="start-button">🏠 トップへ戻る</a>
+</body>
+</html>
+
