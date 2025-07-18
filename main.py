@@ -1,4 +1,3 @@
-# main.py
 from ai_logic import AttackAI, DefenseAI
 from colorama import Fore, Style, init
 import random
@@ -13,7 +12,6 @@ turn = 1
 score = 0
 attack_power = 100
 
-# ログリスト
 battle_log = []
 
 # AIインスタンス
@@ -82,12 +80,12 @@ print(Style.BRIGHT + final_result)
 # 最終ログに追加
 battle_log.append({"final_result": final_result})
 
-# バトルログをファイルに保存
+# バトルをファイルに保存
 def save_log(log_data, filename="log.txt"):
     with open(filename, "w", encoding="utf-8") as f:
         for entry in log_data:
             json.dump(entry, f, ensure_ascii=False)
-            f.write("\n")  # 1行ずつ書く形式（後で読みやすく）
+            f.write("\n")  # 1行ずつかなー
 
 # 最後にログ保存
 save_log(battle_log)

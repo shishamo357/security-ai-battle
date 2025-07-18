@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, render_template, redirect, url_for, session
 from ai_logic import AttackAI, DefenseAI
 import random
@@ -7,7 +6,7 @@ from datetime import datetime
 
 
 app = Flask(__name__)
-app.secret_key = 'supersecret'  # セッションのためのキー（何でもOK）
+app.secret_key = 'supersecret'  # セッションのためのキー
 
 @app.route('/')
 def index():
@@ -26,7 +25,7 @@ def start():
 
 @app.route('/battle')
 def battle():
-    # 最大ターン数
+    # 最大ターン数とりま１０
     MAX_TURN = 10
     WIN_SCORE = 100
 
@@ -36,7 +35,7 @@ def battle():
     attack_power = session.get('attack_power', 100)
     log = session.get('log', [])
 
-    # AI初期化（セッションから）
+    # AI初期化
     attacker = AttackAI()
     attacker.__dict__.update(session['attacker'])
     defender = DefenseAI()

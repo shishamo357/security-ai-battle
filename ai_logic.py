@@ -1,7 +1,7 @@
 
 import random
 
-# 攻撃AIクラス
+# 攻撃AI
 class AttackAI:
     def __init__(self):
         self.attacks = [
@@ -28,7 +28,7 @@ class AttackAI:
                 if atk["name"] == attack_name:
                     atk["success_rate"] = min(atk["success_rate"] + 0.01, 0.99)
 
-# 防御AIクラス
+# 防御のやつ
 class DefenseAI:
     def __init__(self):
         self.defenses = [
