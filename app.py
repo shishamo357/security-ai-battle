@@ -121,30 +121,6 @@ def save_battle_log(log, final_result, filename="log.txt"):
         f.write(json.dumps(data, ensure_ascii=False))
         f.write("\n")  # 1試合ごとに改行して追記
 
-@app.route('/stats')
-def stats():
-    # ログを全件読み込む
-    battles = []
-    try:
-        with open("log.txt", "r", encoding="utf-8") as f:
-            for line in f:
-                battles.append(json.loads(line))
-    except FileNotFoundError:
-        return render_template("stats.html", stats=None)
-
-    # 集計処理
-    total_games = len(battles)
-    attack_wins = sum(1 for b in battles if "攻撃AI" in b["final_result"])
-    defense_wins = total_games - attack_wins
-    avg_score = sum(b["battle_log"][-1]["score"] for b in battles) / total_games
-
-    stats = {
-        "total_games": total_games,
-        "attack_wins": attack_wins,
-        "defense_wins": defense_wins,
-        "avg_score": round(avg_score, 1)
-    }
-    return render_template("stats.html", stats=stats)
 
 if __name__ == "__main__":
     app.run(debug=True)
