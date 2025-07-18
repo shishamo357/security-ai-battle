@@ -29,9 +29,6 @@ Flaskを使用したWebアプリとして動作し、攻撃AIと防御AIが10タ
 ### 結果画面
 ![結果画面](./screenshots/result.png)
 
-### 統計ページ
-![統計ページ](./screenshots/stats.png)
-
 ---
 
 ## セットアップ方法
