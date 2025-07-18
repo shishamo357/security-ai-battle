@@ -120,6 +120,5 @@ def save_battle_log(log, final_result, filename="log.txt"):
         f.write(json.dumps(data, ensure_ascii=False))
         f.write("\n")  # 1試合ごとに改行して追記
 
-
 if __name__ == "__main__":
     app.run(debug=True)
